@@ -1,3 +1,4 @@
+#Reading Data
 data<-read.table("household_power_consumption.txt", header=TRUE, sep=";",
               na.strings = "?")
 
@@ -8,7 +9,7 @@ data$DateTime<-paste(data$Date, data$Time, sep=" ")
 data$DateTime<-strptime(data$DateTime, format="%Y-%m-%d %H:%M:%S")
 
 
-
+#Plotting
 png(file="plot1.png",width = 480,height = 480)
 hist(data$Global_active_power,col="red",
      xlab = "Global Active Power (kilowatts)",main="Global Active Power")
